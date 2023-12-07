@@ -26,7 +26,7 @@ pipeline {
 
                 sh '''
                 docker build -t haideralam/flask-jenk:latest -t haideralam/flask-jenk:v${BUILD_NUMBER} .
-                docker build -t haideralam/nginx-jenk:latest -t haideralam/nginx-jenk::v${BUILD_NUMBER} .
+                docker build -t haideralam/nginx-jenk:latest -t haideralam/nginx-jenk:v${BUILD_NUMBER} .
                 '''
 
             }
