@@ -25,8 +25,21 @@ pipeline {
             steps {
 
                 sh '''
-                docker build -t flask-jenk .
+                docker build -t docker.io/haideralam/flask-jenk:latest .
                 docker build -t nginx-jenk ./nginx
+                '''
+
+            }
+
+        }
+
+        stage('Push') {
+
+            steps {
+
+                sh '''
+                docker push haideralam/flask-jenk
+                docker push haider/nginx-jenk
                 '''
 
             }
