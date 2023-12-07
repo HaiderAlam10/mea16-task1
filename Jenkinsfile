@@ -25,8 +25,8 @@ pipeline {
             steps {
 
                 sh '''
-                docker build -t docker.io/haideralam/flask-jenk:latest .
-                docker build -t nginx-jenk ./nginx
+                docker build -t haideralam/flask-jenk:latest -t haideralam/flask-jenk:v${BUILD_NUMBER} .
+                docker build -t haideralam/nginx-jenk:latest -t haideralam/nginx-jenk::v${BUILD_NUMBER} .
                 '''
 
             }
@@ -38,8 +38,10 @@ pipeline {
             steps {
 
                 sh '''
-                docker push haideralam/flask-jenk
-                docker push haider/nginx-jenk
+                docker push haideralam/flask-jenk:latest
+                docker push haideralam/flask-jenk:v${BUILD_NUMBER}
+                docker push haideralam/nginx-jenk:latest
+                docker push haideralam/nginx-jenk:v${BUILD_NUMBER}
                 '''
 
             }
