@@ -20,7 +20,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: flask
+    app: task1
   ports:
   - protocol: TCP
     port: 5500
