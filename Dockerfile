@@ -8,7 +8,7 @@ RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt
 # Set YOUR_NAME environment variable
-ENV YOUR_NAME="Haider Alam"
+ENV YOUR_NAME="Haider"
 # Expose the correct port
 EXPOSE 5500
 # Create an entrypoint
